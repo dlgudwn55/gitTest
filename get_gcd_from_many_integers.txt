@@ -1,0 +1,15 @@
+def gcd(lst, n):
+    cnt = 0
+    while cnt < n - 1:
+        idx = len(lst) - 1
+        a = lst[idx-1]
+        b = lst[idx]
+        while b != 0:
+            tmp = a % b
+            a = b
+            b = tmp
+        lst.pop()
+        lst.pop()
+        lst.append(a)
+        cnt += 1
+    return lst[0]
